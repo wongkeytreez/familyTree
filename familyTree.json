@@ -1,1 +1,11 @@
-
+[
+  {
+    "age": 4,
+    "name": "tank juice",
+    "children": [],
+    "parent1": null,
+    "parent2": null,
+    "gender": true,
+    "spouse": null
+  }
+]
