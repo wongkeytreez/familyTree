@@ -26,6 +26,6 @@ function makeKid(name, gender, parent1, parent2) {
   parent2.children.push(kid);
   return kid;
 }
-
+let people =[];
 // Global people list
 
