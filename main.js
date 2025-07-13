@@ -82,7 +82,7 @@ containerEl.addEventListener('mouseleave', () => {
   isPanning = false;
   containerEl.style.cursor = 'grab';
 });
- let people=await loadFromGitHub();
+  people=await loadFromGitHub();
   draw(false);
 setInterval(async() => {
   people=await loadFromGitHub();
