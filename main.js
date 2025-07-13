@@ -84,9 +84,6 @@ containerEl.addEventListener('mouseleave', () => {
 });
 
 setInterval(() => {
-  loadFromGitHub((loadedData) => {
-    people = loadedData;
-    draw(false);
-
-  })
+  people=await loadFromGitHub();
+  draw(false);
 }, 10000)
