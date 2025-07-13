@@ -28,9 +28,4 @@ function makeKid(name, gender, parent1, parent2) {
 }
 
 // Global people list
-let people = [];
-loadFromGitHub((loadedData) => {
-  people = loadedData;
-  draw(false);
-
-})
+let people =await loadFromGitHub();
