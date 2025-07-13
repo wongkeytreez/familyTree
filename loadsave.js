@@ -1,5 +1,5 @@
 // LoadSave.js
-let token = "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";
+let token = "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";
 let owner = "wongkeytreez"
 let repo = "familyTree"
 let path = "familyTree.json"
