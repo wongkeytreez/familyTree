@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Interactive Family Tree</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Family Tree</h1>
+
+  <div id="tree-container">
+    <div id="tree"></div>
+  </div>
+
+  <!-- Main Button -->
+  <button id="add-btn" onclick="openPopup()">➕ Add Person</button>
+
+  <!-- Action Buttons -->
+  <div id="action-buttons">
+    <button onclick="openMarryPopup()">💍 Marry</button>
+    <button onclick="openAdoptPopup()">👶 Adopt</button>
+    <button onclick="openDivorcePopup()">💔 Divorce</button>
+    <button onclick="openDisownPopup()">🚫 Disown</button>
+  </div>
+
+  <!-- Add Person Popup -->
+  <div id="popup-bg">
+    <div id="popup">
+      <h3>Add Person</h3>
+      <form id="person-form">
+        <input type="text" id="name" placeholder="Name" required><br>
+        <input type="number" id="age" placeholder="Age" required><br>
+        <select id="gender">
+          <option value="true">Male</option>
+          <option value="false">Female</option>
+        </select><br>
+
+        <div class="search-box">
+          <input type="text" id="parent1-input" placeholder="Parent 1 (optional)" autocomplete="off">
+          <div id="parent1-results" class="search-results"></div>
+        </div>
+
+        <div class="search-box">
+          <input type="text" id="parent2-input" placeholder="Parent 2 (optional)" autocomplete="off">
+          <div id="parent2-results" class="search-results"></div>
+        </div>
+
+        <br>
+        <button type="submit">Add</button>
+        <button type="button" onclick="closePopup()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Marry Popup -->
+  <div class="popup-bg" id="popup-marry">
+    <div class="popup">
+      <h3>Marry</h3>
+      <div class="search-box">
+        <input type="text" id="marry1" placeholder="Spouse 1">
+        <div id="marry1-results" class="search-results"></div>
+      </div>
+      <div class="search-box">
+        <input type="text" id="marry2" placeholder="Spouse 2">
+        <div id="marry2-results" class="search-results"></div>
+      </div>
+      <button onclick="handleMarry()">Confirm</button>
+      <button onclick="closeMarryPopup()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Adopt Popup -->
+  <div class="popup-bg" id="popup-adopt">
+    <div class="popup">
+      <h3>Adopt</h3>
+      <div class="search-box">
+        <input type="text" id="adopt-child" placeholder="Child">
+        <div id="adopt-child-results" class="search-results"></div>
+      </div>
+      <div class="search-box">
+        <input type="text" id="adopt-parent" placeholder="New Parent">
+        <div id="adopt-parent-results" class="search-results"></div>
+      </div>
+      <button onclick="handleAdopt()">Confirm</button>
+      <button onclick="closeAdoptPopup()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Divorce Popup -->
+  <div class="popup-bg" id="popup-divorce">
+    <div class="popup">
+      <h3>Divorce</h3>
+      <div class="search-box">
+        <input type="text" id="divorce1" placeholder="Spouse 1">
+        <div id="divorce1-results" class="search-results"></div>
+      </div>
+      <div class="search-box">
+        <input type="text" id="divorce2" placeholder="Spouse 2">
+        <div id="divorce2-results" class="search-results"></div>
+      </div>
+      <button onclick="handleDivorce()">Confirm</button>
+      <button onclick="closeDivorcePopup()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Disown Popup -->
+  <div class="popup-bg" id="popup-disown">
+    <div class="popup">
+      <h3>Disown Child</h3>
+      <div class="search-box">
+        <input type="text" id="disown-parent" placeholder="Parent">
+        <div id="disown-parent-results" class="search-results"></div>
+      </div>
+      <div class="search-box">
+        <input type="text" id="disown-child" placeholder="Child">
+        <div id="disown-child-results" class="search-results"></div>
+      </div>
+      <button onclick="handleDisown()">Confirm</button>
+      <button onclick="closeDisownPopup()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="loadsave.js"></script>
+  <script src="family.js"></script>
+  <script src="ui.js"></script>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
